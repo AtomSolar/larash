@@ -125,7 +125,7 @@ sudo systemctl reload apache2
 
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password TestPassword!'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password TestPassword!'
-sudo apt-get -y install mysql-server
+sudo apt install mysql-server -y
 
 #Restart all the installed services to verify that everything is installed properly
 
@@ -138,9 +138,9 @@ echo -e "\n"
 php -v
 
 if [ $? -ne 0 ]; then
-   echo "Please Check the Install Services, There is some $(tput bold)$(tput setaf 1)Problem$(tput sgr0)"
+  echo "Please Check the Install Services, There is some $(tput bold)$(tput setaf 1)Problem$(tput sgr0)"
 else
-   echo "Installed Services run $(tput bold)$(tput setaf 2)Sucessfully$(tput sgr0)"
+  echo "Installed Services run $(tput bold)$(tput setaf 2)Sucessfully$(tput sgr0)"
 fi
 
 echo -e "\n"
